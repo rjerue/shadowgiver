@@ -1,8 +1,16 @@
-# Shadowgiver
+# shadowgiver
 
-Shadowgiver is a utility for react native and react native web to make shadows consistent across platforms. It takes in the most primitive object, an Android elevation, and turns it into a box shadow.
+shadowgiver is a utility for react native and react native web to make shadows consistent across platforms. It takes in the most primitive object, an Android elevation, and turns it into a box shadow.
 
 ## Usage:
+
+install
+
+`yarn add shadowgiver`
+
+or
+
+`npm install shadowgiver`
 
 ```js
 import shadowgiver from 'shadowgiver';
