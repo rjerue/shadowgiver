@@ -30,5 +30,5 @@ function shadowgiver(elevation, color) {
   });
 }
 
-export default shadowgiver;
+export { shadowgiver };
 //# sourceMappingURL=shadowgiver.esm.js.map

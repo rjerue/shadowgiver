@@ -32,5 +32,5 @@ function shadowgiver(elevation, color) {
   });
 }
 
-exports.default = shadowgiver;
+exports.shadowgiver = shadowgiver;
 //# sourceMappingURL=shadowgiver.cjs.development.js.map

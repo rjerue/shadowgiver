@@ -10,7 +10,7 @@ export type ReactNativeShadow =
  * @param elevation Elevation number that you would put on Android, will be translated to a shadow on iOS and web
  * @param color A color for the shadow, not supported on android
  */
-function shadowgiver(elevation: number, color?: string): ReactNativeShadow {
+export function shadowgiver(elevation: number, color?: string): ReactNativeShadow {
   const shadowOffset = { width: 0, height: 0.5 * elevation };
   const shadowOpacity = 0.3;
   const shadowRadius = 0.8 * elevation;
@@ -30,5 +30,3 @@ function shadowgiver(elevation: number, color?: string): ReactNativeShadow {
     },
   });
 }
-
-export default shadowgiver;

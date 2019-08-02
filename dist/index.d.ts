@@ -7,5 +7,4 @@ export declare type ReactNativeShadow = ShadowStyleIOS | Pick<ViewStyle, 'elevat
  * @param elevation Elevation number that you would put on Android, will be translated to a shadow on iOS and web
  * @param color A color for the shadow, not supported on android
  */
-declare function shadowgiver(elevation: number, color?: string): ReactNativeShadow;
-export default shadowgiver;
+export declare function shadowgiver(elevation: number, color?: string): ReactNativeShadow;

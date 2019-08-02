@@ -15,7 +15,7 @@ or
 `npm install shadowgiver`
 
 ```js
-import shadowgiver from 'shadowgiver';
+import { shadowgiver } from 'shadowgiver';
 
 StyleSheet.create({
   ...shadowgiver(4),
