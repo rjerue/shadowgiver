@@ -1,6 +1,8 @@
 # shadowgiver
 
-shadowgiver is a utility for react native and react native web to make shadows consistent across platforms. It takes in the most primitive object, an Android elevation, and turns it into a box shadow.
+shadowgiver is a utility for react native and react native web to make shadows consistent across platforms. It takes in the most primitive object, an Android elevation, and turns it into a box shadow, and iOS shadow, and an elevation. Will only return the minimal number of keys.
+
+[NPM Package](https://www.npmjs.com/package/shadowgiver)
 
 ## Usage:
 
@@ -22,7 +24,32 @@ StyleSheet.create({
 
 This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
 
-## Local Development
+Want to see under the hood? Heres the shadowgiver function:
+
+```js
+function shadowgiver(elevation, color) {
+  const shadowOffset = { width: 0, height: 0.5 * elevation };
+  const shadowOpacity = 0.3;
+  const shadowRadius = 0.8 * elevation;
+  const shadowColor = color || 'black';
+  return Platform.select({
+    ios: {
+      shadowColor: 'black',
+      shadowOpacity,
+      shadowRadius,
+      shadowOffset,
+    },
+    android: {
+      elevation,
+    },
+    web: {
+      boxShadow: `${shadowOffset.width}px ${shadowOffset.height}px ${shadowRadius}px ${shadowColor}`,
+    },
+  });
+}
+```
+
+## Package Development
 
 Below is a list of commands you will probably find useful.
 
