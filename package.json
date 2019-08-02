@@ -1,12 +1,19 @@
 {
   "name": "shadowgiver",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "main": "dist/index.js",
+  "license": "MIT",
   "module": "dist/shadowgiver.esm.js",
+  "repository": "https://github.com/rjerue/shadowgiver",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "author": {
+    "name": "Ryan Jerue",
+    "email": "ryan@jerue.org",
+    "url": "http://jerue.org"
+  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
