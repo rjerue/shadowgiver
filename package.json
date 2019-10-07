@@ -1,6 +1,6 @@
 {
   "name": "shadowgiver",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/index.js",
   "license": "MIT",
   "module": "dist/shadowgiver.esm.js",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build && tsc -p ./tsconfig-web.json",
     "stage": "pretty-quick --staged && tsdx build",
     "prepublishOnly": "yarn stage && git add dist"
   },

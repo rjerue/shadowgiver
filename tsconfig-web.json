@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/utils/**/*"],
+  "compilerOptions": {
+    "outDir": "./dist/web",
+    "paths": {
+      "*": ["src/utils/*", "node_modules/*"]
+    },
+    "rootDir": "./src/utils",
+    "module": "commonjs"
+  }
+}

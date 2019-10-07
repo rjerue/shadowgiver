@@ -1,5 +1,5 @@
 import { Platform, ViewStyle, ShadowStyleIOS } from 'react-native';
-
+import { calculate, webShadow } from './utils';
 export type ReactNativeShadow =
   | ShadowStyleIOS
   | Pick<ViewStyle, 'elevation'>
@@ -10,12 +10,15 @@ export type ReactNativeShadow =
  * @param elevation Elevation number that you would put on Android, will be translated to a shadow on iOS and web
  * @param color A color for the shadow, not supported on android
  */
-export function shadowgiver(elevation: number, color?: string): ReactNativeShadow {
-  const shadowOffset = { width: 0, height: 0.5 * elevation };
-  const shadowOpacity = 0.3;
-  const shadowRadius = 0.8 * elevation;
-  const shadowColor = color || 'black';
-  return Platform.select({
+export function shadowgiver(
+  elevation: number,
+  color?: string
+): ReactNativeShadow {
+  const { shadowOffset, shadowOpacity, shadowRadius, shadowColor } = calculate(
+    elevation,
+    color
+  );
+  const output: ReactNativeShadow = Platform.select({
     ios: {
       shadowColor: 'black',
       shadowOpacity,
@@ -26,7 +29,14 @@ export function shadowgiver(elevation: number, color?: string): ReactNativeShado
       elevation,
     },
     web: {
-      boxShadow: `${shadowOffset.width}px ${shadowOffset.height}px ${shadowRadius}px ${shadowColor}`,
+      boxShadow: webShadow({
+        shadowOffset,
+        shadowOpacity,
+        shadowRadius,
+        shadowColor,
+      }),
     },
   });
+
+  return output;
 }

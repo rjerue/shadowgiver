@@ -49,6 +49,8 @@ function shadowgiver(elevation, color) {
 }
 ```
 
+There's also a way to JUST output what's needed for web. Just instead import from `shadowgiver/web`!
+
 ## Package Development
 
 Below is a list of commands you will probably find useful.
